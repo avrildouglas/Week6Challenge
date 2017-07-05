@@ -1,12 +1,24 @@
 package com.resume.wk6;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Applicant {
 	
+	private long appId;
 	private String fName;
 	private String lName;
 	private String eMail;
 	
 	
+	public long getAppId() {
+		return appId;
+	}
+
+	public void setAppId(long appId) {
+		this.appId = appId;
+	}
+
 	public String getfName() {
 		return fName;
 	}
