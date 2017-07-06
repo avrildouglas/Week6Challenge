@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <title>Post Links Information</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+      <h1>Resume</h1>
+      <table>
+      	<th:block th:each="appl : ${appls}">
+      		<tr>
+      			<td th:text= ${appl.fName} + th:text="${appl.lName}"></td>     				
+      		</tr>
+      		<tr> 	
+      		    <td th:text="${appl.eMail}"></td>	
+       		</tr>
+          	</th:block> 
+     </table>
+       </body>
+</html>

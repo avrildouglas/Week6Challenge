@@ -1,10 +1,15 @@
 package com.resume.wk6;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Applicant {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long appId;
 	private String fName;
 	private String lName;

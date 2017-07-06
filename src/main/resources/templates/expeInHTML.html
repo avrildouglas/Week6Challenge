@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Experience</title>
+</head>
+<body>
+  <form action="#" th:action="@{/resumes/add}" th:object="${expe}" method="post">
+         <p>Title : <input type="text" th:field="*{titleE}"/> </p>
+         <p>Company Name: <input type="text" th:field="*{compE}"/> </p>
+         <p>Start Date: <input type="date" th:field="*{startD}"/> </p>
+         <p>End Date: <input type="date" th:field="*{endD}"/> </p>
+         <p>Duties: <input type="text" th:field="*{dutiesE}"/> </p>
+         <p><input type="submit" value="Submit Experience"/></p>
+  </form>
+
+</body>
+</html>

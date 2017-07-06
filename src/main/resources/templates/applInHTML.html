@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Applicant</title>
+</head>
+<body>
+  <form action="#" th:action="@{/resumes/app}" th:object="${appl}" method="post">
+         <p>First Name : <input type="text" th:field="*{fName}"/> </p>
+         <p>Last Name: <input type="text" th:field="*{lName}"/> </p>
+         <p>Email Address : <input type="text" th:field="*{eMail}"/> </p>
+         <p><input type="submit" value="Submit Applicant"/></p>
+  </form>
+
+</body>
+</html>

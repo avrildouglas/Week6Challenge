@@ -1,6 +1,6 @@
 package com.resume.wk6;
+import javax.validation.Valid;
 
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,52 +11,47 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.resume.wk6;
-
-import java.time.Instant;
-import java.util.Date;
-import java.util.Map;
-
-import javax.validation.Valid;
+import com.resume.wk6.Applicant;
+import com.resume.wk6.Education;
+import com.resume.wk6.Experience;
+import com.resume.wk6.Skill;
 
 
 @Controller
 @RequestMapping(path="/resumes")
 
-public class ResumeSixController {
+public class SkillController {
 	
 //	Date d = new Date();
 //	String formatted = new SimpleDateFormat ("yyyy-MM-dd:HH-mm-ss").format (d);
 
 		@Autowired
-		private ResumeSixRepository ressixRepository;
+		private SkillRepository skillRepository;
+		
 
 	/**@GetMapping("/login")
 	public String login(){
 		return "login";
 	}*/
-		
 
-	@RequestMapping("/list")
-	public String postSubmitForm(Model model){
-		model.addAttribute("posts", ressixRepository.findAll());
-		return "ressixOutHTM";
+	@RequestMapping("/ski")
+	public String skilSubmitForm(Model model){
+		model.addAttribute("skils", skillRepository.findAll());
+		return "resumeOutHTM";
 	}
 		
-	@GetMapping("/add")
-	public String addNewPost(Model model){
-		model.addAttribute("post", new Reddit());
-		return "postlinkHTML";
+	@GetMapping("/ski")
+	public String addNewSki(Model model){
+		model.addAttribute("skil", new Skill());
+		return "skilInHTML";
 	}
-
-	@PostMapping("/add")
-	public String processPost(@Valid Reddit post, BindingResult bindingResult) {
-		if (bindingResult.hasErrors()) {
-			return "postlinkHTML";
-		}
-			reddRepository.save(post);
-			return "redirect:/posts/list";
+		
+	@PostMapping("/ski")
+	public String processSki(@Valid Skill skil, BindingResult bindingResult) {
+	if (bindingResult.hasErrors()) {
+		return "skilInHTML";
 	}
-	
- 	
+		skillRepository.save(skil);
+		return "redirect:/resumes/list";
+	}	
 }

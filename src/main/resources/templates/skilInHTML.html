@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Skills</title>
+</head>
+<body>
+  <form action="#" th:action="@{/resumes/add}" th:object="${skil}" method="post">
+         <p>Skills : <input type="text" th:field="*{skillS}"/> </p>
+         <p>Skill Level: <input type="text" th:field="*{sklevelS"/> </p>
+  </form>
+
+</body>
+</html>

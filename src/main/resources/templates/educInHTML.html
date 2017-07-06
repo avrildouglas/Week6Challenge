@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Education</title>
+</head>
+<body>
+  <form action="#" th:action="@{/resumes/add}" th:object="${educ}" method="post">
+         <p>Major : <input type="text" th:field="*{majorE}"/> </p>
+         <p>University Attended: <input type="text" th:field="*{universeA}"/> </p>
+         <p>Graduation Date : <input type="text" th:field="*{gradD}"/> </p>
+         <p><input type="submit" value="Submit Education"/></p>
+  </form>
+
+</body>
+</html>

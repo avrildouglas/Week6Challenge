@@ -1,10 +1,15 @@
 package com.resume.wk6;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-public class Skills {
+public class Skill {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long skId;
 	private String skills;
 	private String sklevel;
