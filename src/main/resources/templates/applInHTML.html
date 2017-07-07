@@ -6,7 +6,7 @@
 </head>
 <body>
   <form action="#" th:action="@{/resumes/app}" th:object="${appl}" method="post">
-         <p>Full Name : <input type="text" th:field="*{fName}"/> </p>
+         <p>Full Name : <input type="text" th:field="*{fullName}"/> </p>
          <p>Email Address : <input type="text" th:field="*{eMail}"/> </p>
          <p><input type="submit" value="Submit Applicant"/></p>
   </form>

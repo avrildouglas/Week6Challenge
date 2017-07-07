@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 //import com.resume.wk6.
 
 import java.util.*;
@@ -17,14 +19,16 @@ public class Education {
 	private long edId;
 	private String major;
 	private String university;
-	private Date gradDate;
+	
+	//@JsonFormat(pattern="mm/dd/yyyy")
+	private String gradDate;
 
 //	private Set<Applicant> applicants;
 	
 
 	/**use below*/
-	@ManyToMany(targetEntity=Applicant.class, mappedBy = "educations", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-//	@OneToMany(targetEntity=Applicant.class, mappedBy = "education", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+//	@ManyToMany(targetEntity=Applicant.class, mappedBy = "educations", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany(targetEntity=Applicant.class, mappedBy = "education", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set <Applicant> applicants;
 	
 	public Set<Applicant> getApplicants() {
@@ -59,11 +63,11 @@ public class Education {
 		this.university = university;
 	}
 	
-	public Date getGradDate() {
+	public String getGradDate() {
 		return gradDate;
 	}
 	
-	public void setGradDate(Date gradDate) {
+	public void setGradDate(String gradDate) {
 		this.gradDate = gradDate;
 	}
 }

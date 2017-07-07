@@ -5,7 +5,7 @@
 </head>
 <body>
   <form action="#" th:action="@{/resumes/edu}" th:object="${educ}" method="post">
-         <p>Major(s) : <input type="text" th:field="*{major}"/> </p>
+         <p>Major(s) : <input type="text" th:field="*{major}"/> </p>        
          <p>Universities Attended: <input type="text" th:field="*{university}"/> </p>
          <p>Graduation Date(s) : <input type="text" th:field="*{gradDate}"/> </p>
          <p><input type="submit" value="Submit Education"/></p>

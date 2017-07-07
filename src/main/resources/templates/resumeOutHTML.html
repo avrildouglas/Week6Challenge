@@ -4,18 +4,22 @@
 <meta charset="UTF-8" />
 <title>Applicant</title>
 </head>
-<body>>
+<body>
       <h1>Resume</h1>
       <table>
           <th:block th:each="appl : ${appls}">
               <tr>
                   <td th:text="${appl.fullName}"></td>
+               </tr>
+               <tr>
                   <td th:text="${appl.eMail}"></td>    
               </tr>             
           </th:block> 
           <th:block th:each="educ : ${educs}">
               <tr>
                   <td th:text= "${educ.major}"></td> 
+              </tr>
+              <tr>
                   <td th:text="${educ.university}"></td>                     
               </tr>
               <tr>     

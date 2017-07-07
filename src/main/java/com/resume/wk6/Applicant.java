@@ -18,28 +18,19 @@ public class Applicant {
 //	private String lName;
 	private String eMail;
 	/**use this*/
-	//@ManyToOne(fetch = FetchType.EAGER)
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER)
+	//@ManyToMany(fetch = FetchType.EAGER)
 	/**use this*/
-  //  @JoinTable(name="education",
-  //  	joinColumns = @JoinColumn(name = "education_id"),
-  //  	inverseJoinColumns = @JoinColumn(name = "applicant_id"))
+    @JoinTable(name="education",
+   	joinColumns = @JoinColumn(name = "applicant_id"),
+   	inverseJoinColumns = @JoinColumn(name = "education_id"))
    //use this
-//private Education education;
 	/*added s to educations*/
-
-    @JoinTable(joinColumns = @JoinColumn(name = "applicant_id"),inverseJoinColumns = @JoinColumn(name = "education_id"))
-
-    private Collection<Education> educations;
+ //   @JoinTable(joinColumns = @JoinColumn(name = "applicant_id"),inverseJoinColumns = @JoinColumn(name = "education_id"))
+	private Education education;
+ //   private Collection<Education> educations;
 	
-	/**below is uses with no collection w/ (private Education education)
-/**	public Education getEducation() {
-		return educations;
-	} 
-
-	public void setEducation(Education education) {
-		this.education = educations;
-	}*/
+	/**below is uses with no collection w/ (private Education education)*/
 	
 	public long getAppId() {
 		return appId;
@@ -73,12 +64,20 @@ public class Applicant {
 		this.eMail = eMail;
 	}
 
-	public Collection<Education> getEducations() {
+	public Education getEducation() {
+		return education;
+	}
+
+	public void setEducation(Education education) {
+		this.education = education;
+	}
+
+/**	public Collection<Education> getEducations() {
 		return educations;
 	}
 
 	public void setEducations(Collection<Education> educations) {
 		this.educations = educations;
-	}
+	}*/
 	
 }
