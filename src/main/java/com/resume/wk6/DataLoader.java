@@ -36,35 +36,35 @@ public class DataLoader implements CommandLineRunner{
         Role seekerRole = roleRepository.findByRole("JOBSEEKER");
         Role recruiterRole = roleRepository.findByRole("RECRUITER");
 
-        User user = new User("bob@bob.com","bob","Bob","Bobberson", true, "bob");
+        User user = new User("bob@bob.com","passord","Bob","Bobberson", true, "bbobberson");
         user.setRoles(Arrays.asList(userRole));
         userRepository.save(user);
 
-        user = new User("jim@jim.com","jim","Jim","Jimmerson", true, "jim");
-        user.setRoles(Arrays.asList(userRole));
-        userRepository.save(user);
-
-        user = new User("admin@secure.com","password","Admin","User", true, "admin");
+        user = new User("vbrad@montgomerycollege.edu","resaccess","Veronica","Brad", true, "vbrad");
         user.setRoles(Arrays.asList(adminRole));
         userRepository.save(user);
 
-        user = new User("sam@every.com","password","Sam","Everyman", true, "everyman");
-        user.setRoles(Arrays.asList(userRole, adminRole));
+        user = new User("ofox@yahoo.com","recruit1","Omery","Fox", true, "ofox");
+        user.setRoles(Arrays.asList(recruiterRole));
+        userRepository.save(user);
+
+        user = new User("nsmith@google.com","recruit2","Nancy","Smith", true, "nsmith");
+        user.setRoles(Arrays.asList(recruiterRole));
         userRepository.save(user);
         
         user = new User("ljones@google.com","user1","Larry","Jones", true, "ljones");
-        user.setRoles(Arrays.asList(recruiterRole));
+        user.setRoles(Arrays.asList(userRole, adminRole));
         userRepository.save(user);
         
         user = new User("mmary@yahoo.com","user2","Mark","Mary", true, "mmary");
-        user.setRoles(Arrays.asList(recruiterRole));
+        user.setRoles(Arrays.asList(userRole, seekerRole));
         userRepository.save(user);
         
         user = new User("pmanning@google.com","seeker1","Peter","Manning", true, "pmanning");
         user.setRoles(Arrays.asList(seekerRole));
         userRepository.save(user);
         
-        user = new User("pmanning@google.com","seeker1","Peter","Manning", true, "pmanning");
+        user = new User("rturner@comcast.net","seeker2","Robert","Turner", true, "rturner");
         user.setRoles(Arrays.asList(seekerRole));
         userRepository.save(user);
         
