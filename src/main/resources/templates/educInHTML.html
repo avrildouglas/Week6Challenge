@@ -4,10 +4,10 @@
 <title>Education</title>
 </head>
 <body>
-  <form action="#" th:action="@{/resumes/add}" th:object="${educ}" method="post">
-         <p>Major : <input type="text" th:field="*{majorE}"/> </p>
-         <p>University Attended: <input type="text" th:field="*{universeA}"/> </p>
-         <p>Graduation Date : <input type="text" th:field="*{gradD}"/> </p>
+  <form action="#" th:action="@{/resumes/edu}" th:object="${educ}" method="post">
+         <p>Major(s) : <input type="text" th:field="*{major}"/> </p>
+         <p>Universities Attended: <input type="text" th:field="*{university}"/> </p>
+         <p>Graduation Date(s) : <input type="text" th:field="*{gradDate}"/> </p>
          <p><input type="submit" value="Submit Education"/></p>
   </form>
 

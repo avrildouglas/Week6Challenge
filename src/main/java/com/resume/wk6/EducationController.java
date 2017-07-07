@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(path="/resumes/")
+@RequestMapping(path="/resumes")
 
 public class EducationController {
 
 	@Autowired
 	private EducationRepository educationRepository;
 
-	@RequestMapping("/edu")
+	@RequestMapping("/edulist")
 	public String educSubmitForm(Model model){
 		model.addAttribute("educs", educationRepository.findAll());
-		return "resumeOutHTM";
+		return "resumeOutHTML";
 	}
 
 	@GetMapping("/edu")
@@ -36,6 +36,6 @@ public class EducationController {
 		return "educInHTML";
 	}
 		educationRepository.save(educ);
-		return "redirect:/resumes/list";
+		return "redirect:/resumes/edulist";
 	}
 }

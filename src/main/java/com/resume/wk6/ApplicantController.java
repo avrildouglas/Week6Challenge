@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/resumes")
+@RequestMapping(path="/resumes")
 public class ApplicantController {
 
 	@Autowired
 	private ApplicantRepository applicantRepository;
 
 	
-	@RequestMapping("/app")
+	@RequestMapping("/applist")
 	public String appsSubmitForm(Model model){
 		model.addAttribute("appls", applicantRepository.findAll());
-		return "saved";
+		return "resumeOutHTML";
 	}
 	
 	@GetMapping("/app")

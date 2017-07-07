@@ -1,11 +1,13 @@
 package com.resume.wk6;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+//import com.resume.wk6.
+
+import java.util.*;
 
 @Entity
 public class Education {
@@ -16,8 +18,23 @@ public class Education {
 	private String major;
 	private String university;
 	private Date gradDate;
+
+//	private Set<Applicant> applicants;
 	
+
+	/**use below*/
+	@ManyToMany(targetEntity=Applicant.class, mappedBy = "educations", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+//	@OneToMany(targetEntity=Applicant.class, mappedBy = "education", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set <Applicant> applicants;
 	
+	public Set<Applicant> getApplicants() {
+		return applicants;
+	}
+
+	public void setApplicants(Set<Applicant> applicants) {
+		this.applicants = applicants;
+	} 
+
 	public long getEdId() {
 		return edId;
 	}
@@ -49,5 +66,5 @@ public class Education {
 	public void setGradDate(Date gradDate) {
 		this.gradDate = gradDate;
 	}
-
 }
+	

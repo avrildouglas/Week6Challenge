@@ -1,20 +1,28 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-      <title>Post Links Information</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  </head>
-  <body>
+<head>
+<meta charset="UTF-8" />
+<title>Applicant</title>
+</head>
+<body>>
       <h1>Resume</h1>
       <table>
-      	<th:block th:each="appl : ${appls}">
-      		<tr>
-      			<td th:text= ${appl.fName} + th:text="${appl.lName}"></td>     				
-      		</tr>
-      		<tr> 	
-      		    <td th:text="${appl.eMail}"></td>	
-       		</tr>
-          	</th:block> 
+          <th:block th:each="appl : ${appls}">
+              <tr>
+                  <td th:text="${appl.fullName}"></td>
+                  <td th:text="${appl.eMail}"></td>    
+              </tr>             
+          </th:block> 
+          <th:block th:each="educ : ${educs}">
+              <tr>
+                  <td th:text= "${educ.major}"></td> 
+                  <td th:text="${educ.university}"></td>                     
+              </tr>
+              <tr>     
+                  <td th:text="${educ.gradDate}"></td>    
+               </tr>
+               
+              </th:block> 
      </table>
        </body>
 </html>
